@@ -10,13 +10,4 @@ export const PANELTYPES: IPipe[] = [
     {title: 'Files'},
     {title: 'History'}
 ];
-/*
-export enum PanelType {
-    Properties,
-    Discussion,
-    Attachments,
-    Relationship,
-    Files,
-    History
-}
-*/
+

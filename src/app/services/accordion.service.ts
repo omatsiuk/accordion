@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
-import { PANELTYPES, IPipe } from '../shared/models/PanelType';
+import { PANELTYPES } from '../shared/models/PanelType';
+import { of }         from 'rxjs/observable/of';
 
 @Injectable()
 export class AccordionService {
-    getPanelTypes(): IPipe[] {
-       return PANELTYPES;
+    getPanels() {
+        return of(PANELTYPES);
     }
 }

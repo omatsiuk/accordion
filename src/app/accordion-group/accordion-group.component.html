@@ -1,5 +1,5 @@
 <div class="accordion-group">
-    <accordion-panel *ngFor="let panel of panelTypes"
+    <accordion-panel *ngFor="let panel of panelTypes | async"
                      [title]="panel.title"
                      class="accordion-panel"
                      (onPicked)="select(panel)"

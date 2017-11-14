@@ -3,6 +3,7 @@ import {
 } from '@angular/core';
 import { AccordionService } from '../services/accordion.service';
 import { IPipe } from '../shared/models/PanelType';
+import { Observable } from 'rxjs/Observable';
 @Component({
     selector: 'accordion-group',
     styleUrls: ['./accordion-group.component.scss'],
@@ -10,11 +11,11 @@ import { IPipe } from '../shared/models/PanelType';
 })
 
 export class AccordionGroupComponent {
-    panelTypes: IPipe[];
+    panelTypes: Observable<IPipe[]>;
     title: string;
     selected: string;
     constructor(_accordionService: AccordionService) {
-        this.panelTypes = _accordionService.getPanelTypes();
+        this.panelTypes = _accordionService.getPanels();
     }
     callAlert(panel: string): void {
         alert(panel);
