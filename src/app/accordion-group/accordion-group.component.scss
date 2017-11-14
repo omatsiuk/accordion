@@ -1,0 +1,42 @@
+@import "../../styles/settings/colors";
+$accordion-group-heading-height: 31px;
+
+.accordion-group {
+    background: $white;
+    display: block;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+.accordion-panel {
+    height: 100%;
+    margin: 0;
+    min-height: $accordion-group-heading-height;
+    padding: 0;
+    position: relative;
+    transition: height .2s ease;
+    width: 100%;
+}
+
+@keyframes openPanel {
+    from {
+        min-height: $accordion-group-heading-height;
+    }
+
+    to {
+        min-height: 155px;
+    }
+}
+
+.accordion-panel.accordion-panel--open {
+    min-height: 155px;
+    display: block;
+    border-left: solid 2px $brand-secondary;
+    animation-name: openPanel;
+    animation-duration: 0.5s;
+}
+
+

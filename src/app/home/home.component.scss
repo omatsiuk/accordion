@@ -1,0 +1,51 @@
+@import '../../styles/partials/sidebar';
+
+:host {
+    &.right-panel-visible {
+        .sidebar.right-panel {
+            margin-right: 0;
+        }
+    }
+
+    .right-panel {
+        margin-right: -280px;
+    }
+}
+
+.page-toolbar__wrapper {
+    background: $gray-lighter;
+    height: $toolbar-height;
+    padding: 0 12px;
+}
+
+.hamburger-box {
+    cursor: pointer;
+}
+
+.hamburger--collapse.is-active .hamburger-inner::after {
+    transform: rotate(-45deg);
+}
+
+.hamburger--collapse.is-active .hamburger-inner::before {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    content: ' ';
+    height: 18px;
+    width: 2px;
+    background-color: #fff;
+}
+
+.hamburger--collapse.is-active .hamburger-inner::after {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    content: ' ';
+    height: 18px;
+    width: 2px;
+    background-color: #fff;
+}
+
+.hamburger--collapse.is-active .hamburger-inner::before {
+    transform: rotate(45deg);
+}

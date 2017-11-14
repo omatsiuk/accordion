@@ -1,0 +1,11 @@
+<div class="accordion-group">
+    <accordion-panel *ngFor="let panel of panelTypes"
+                     [title]="panel.title"
+                     class="accordion-panel"
+                     (onPicked)="select(panel)"
+                     (onPickedButton)="callAlert(panel.title)"
+                     [ngClass]='{"accordion-panel--open": isActive(panel)}'
+    ></accordion-panel>
+</div>
+
+

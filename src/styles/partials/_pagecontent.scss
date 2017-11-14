@@ -1,0 +1,156 @@
+@import '../../styles/settings/variables';
+@import '../../styles/settings/colors';
+@import '../../styles/settings/typography';
+@import '../../styles/modules/mixins';
+$page-body-min-width: 650px;
+$landing-min-width: 720px;
+
+.empty-main__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.page__banner {
+    background: url('/../../assets/img/storyteller-banner.jpg') 100% 39% no-repeat;
+    background-size: cover;
+    height: 48%;
+    width: 100%;
+    min-width: $landing-min-width;
+}
+
+.page__banner-header {
+    height: 130px;
+    background-color: rgba(255, 255, 255, 0.72);
+    display: flex;
+    align-items: center;
+    padding: 30px 50px;
+}
+
+.page__banner-img {
+    height: 35px;
+}
+
+.page__banner-text {
+    font-size: $font-size-h3;
+    color: $brand-primary;
+    padding-left: 27px;
+}
+
+.page__banner-divider {
+    margin-left: 30px;
+    height: 70px;
+    border-left: 4px solid $brand-secondary;
+}
+
+.empty-main {
+    background-color: $white;
+    color: $gray-dark;
+    font-weight: $font-weight-semibold;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 52%;
+    min-width: $landing-min-width;
+}
+
+.empty-main__btns-wrapper {
+    display: flex;
+    padding: 45px 0;
+}
+
+.empty-main__circle-btn {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 110px 10px;
+}
+
+.empty-main__btn-text {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.empty-main__btn-text {
+    font-size: $font-size-large;
+}
+
+.empty-main__resources-container {
+    padding: 0 10px;
+    width: 100%;
+    display: flex;
+}
+
+.empty-main__resource {
+    background-color: $gray-lightest;
+    flex: 1;
+    padding: 25px;
+    margin: 0 8px 15px;
+}
+
+.empty-main__resource-title {
+    color: $brand-secondary;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+.empty-main__resource-text {
+    text-align: left;
+    font-size: $font-size-base;
+    line-height: 26px;
+    font-weight: 500;
+    color: $gray-darker;
+}
+
+
+.right-panel .sidebar-content {
+    .utility-panel-title {
+        background: $blue-lightest;
+        border-left: solid 2px $right-sidebar-border;
+        border-right: solid 1px $utility-panel-border-color;
+        height: $utility-panel-title-height;
+        line-height: $utility-panel-title-height;
+
+        > span {
+            color: $gray-dark;
+            display: inline-block;
+            font-size: $font-size-small;
+            font-weight: 600;
+            overflow: hidden;
+            padding: 0 10px 0 26px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .icon {
+            display: block;
+            float: left;
+            left: 10px;
+            position: absolute;
+
+            &::before {
+                font-size: $font-size-normal;
+                margin: 0;
+                padding: 0;
+                text-align: left;
+            }
+        }
+    }
+
+    .utility-panel-content {
+        height: calc(100% - #{$utility-panel-title-height});
+
+        &.empty-panel {
+            border-left: solid 2px $right-sidebar-border;
+        }
+    }
+}

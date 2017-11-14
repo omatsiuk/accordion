@@ -1,0 +1,158 @@
+@import "../../../styles/settings/colors";
+@import "../../../styles/settings/variables";
+
+$accordion-group-heading-height: 31px;
+
+:host {
+    &.accordion-panel--open {
+        .accordion-panel__heading {
+            background-color: $brand-secondary;
+        }
+
+        .accordion-panel__content {
+            height: 100%;
+            opacity: 1;
+        }
+    }
+
+    .properties.accordion-panel__heading::before {
+        content: '\e806';
+    }
+
+    .discussion.accordion-panel__heading::before {
+        content: '\e806';
+    }
+
+    .attachments.accordion-panel__heading::before {
+        content: '\e872';
+        font-size: 14px !important;
+        margin-top: 0 !important;
+        padding-left: 2px;
+    }
+
+    .relationship.accordion-panel__heading::before {
+        content: '\e849';
+    }
+
+    .history.accordion-panel__heading::before {
+        content: '\e831';
+    }
+
+    .files.accordion-panel__heading::before {
+        content: '\e816';
+    }
+}
+
+.choicePanel {
+    background: $brand-secondary;
+    color: $dropdown-bg;
+}
+
+.accordion-panel__heading {
+    background: $gray-dark;
+    border-bottom: solid 1px $utility-panel-border-color;
+    box-sizing: border-box;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    height: $accordion-group-heading-height;
+    margin: 0;
+    padding: 5px 40px 0 10px;
+}
+
+.accordion-panel__heading:hover {
+    background: $brand-secondary;
+}
+
+.accordion-panel__icon::before {
+    display: inline-block;
+    float: left;
+    font-family: 'bp-font';
+    font-size: 16px;
+    margin-top: -2px;
+    width: 26px;
+}
+
+.accordion-panel__pin--checkbox {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    width: $accordion-group-heading-height;
+    z-index: 1;
+}
+
+.accordion-panel__pin--label {
+    visibility: hidden;
+}
+
+.accordion-panel__pin--checkbox + .accordion-panel__pin--label {
+    display: block;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+// custom checkbox
+.accordion-panel__pin--checkbox:not(:checked) + .accordion-panel__pin--label::before,
+.accordion-panel__pin--checkbox:checked + .accordion-panel__pin--label::before,
+.accordion-panel__pin--checkbox:not(:checked) + .accordion-panel__pin--label::after,
+.accordion-panel__pin--checkbox:checked + .accordion-panel__pin--label::after {
+    background: $brand-secondary url('/../../assets/img/thumbtack.svg') no-repeat center;
+    background-size: contain;
+    content: ' ';
+    cursor: pointer;
+    height: #{$accordion-group-heading-height - 4px};
+    line-height: #{$accordion-group-heading-height - 4px};
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    width: #{$accordion-group-heading-height - 4px};
+}
+
+.accordion-panel__pin--checkbox:not(:checked) + .accordion-panel__pin--label::before,
+.accordion-panel__pin--checkbox:checked + .accordion-panel__pin--label::before {
+    opacity: .5;
+    transform: rotate(-90deg);
+    z-index: 3;
+}
+
+.accordion-panel__pin--checkbox:not(:checked) + .accordion-panel__pin--label::after,
+.accordion-panel__pin--checkbox:checked + .accordion-panel__pin--label::after {
+    color: $white;
+    text-align: center;
+    z-index: 4;
+}
+
+// custom checkbox un-checked (checkmark invisible)
+.accordion-panel__pin--checkbox:not(:checked) + .accordion-panel__pin--label::after {
+    opacity: 0;
+}
+
+// custom checkbox checked (checkmark visible)
+.accordion-panel__pin--checkbox:checked + .accordion-panel__pin--label::after {
+    opacity: 1;
+}
+
+.accordion-panel__indicator {
+    background: url(/../../../assets/icon/change.svg) no-repeat 0 0 transparent;
+    background-size: 12px 12px;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-left: 4px;
+}
+
+.accordion-panel__content {
+    border-left: solid 2px $right-sidebar-border;
+    height: 0;
+    margin: 0;
+    opacity: 0;
+    overflow: auto;
+    z-index: 2;
+}
+
