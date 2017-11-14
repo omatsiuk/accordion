@@ -10,11 +10,11 @@ import {
 })
 export class HomeComponent implements OnInit {
     @HostBinding('class.right-panel-visible')isActive: boolean = true;
-    ngOnInit() {
+    ngOnInit(): void {
         console.log('hello `Home` component');
         // this.title.getData().subscribe(data => this.data = data);
     }
-    onClick() {
+    onClick(): void {
         this.isActive =! this.isActive;
     }
 }

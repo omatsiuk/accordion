@@ -12,17 +12,17 @@ import { IPipe } from '../shared/models/PanelType';
 export class AccordionGroupComponent {
     panelTypes: IPipe[];
     title: string;
-    selected: any;
+    selected: string;
     constructor(_accordionService: AccordionService) {
         this.panelTypes = _accordionService.getPanelTypes();
     }
-    callAlert(panel) {
+    callAlert(panel: string): void {
         alert(panel);
     }
-    isActive(panel): boolean {
+    isActive(panel: string): boolean {
         return this.selected === panel;
     }
-    select(panel) {
+    select(panel: string): void {
         this.selected = (this.selected === panel ? null : panel);
     }
 }

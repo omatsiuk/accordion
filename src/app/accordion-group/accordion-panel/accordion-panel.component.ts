@@ -11,10 +11,10 @@ export class AccordionPanelComponent {
     @Output() onPicked: EventEmitter<any> = new EventEmitter<any>();
     @Output() onPickedButton: EventEmitter<any> = new EventEmitter<any>();
     constructor() {}
-    onClick() {
+    onClick(): void {
         this.onPicked.emit();
     }
-    clickPanel() {
+    clickPanel(): void {
         this.onPickedButton.emit();
     }
 }
